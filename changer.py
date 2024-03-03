@@ -8,7 +8,10 @@ import sys
  
 sesh = Session(client_identifier="chrome_115", random_tls_extension_order=True)
 
-PICTURE_FOLDER = sys.argv[1]
+if len(sys.argv) < 2:
+    PICTURE_FOLDER = "profile_pictures/"
+else:
+    PICTURE_FOLDER = sys.argv[1]
 
 def get_random_picture():
     pictures = os.listdir(PICTURE_FOLDER)
