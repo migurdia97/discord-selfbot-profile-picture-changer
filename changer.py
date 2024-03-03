@@ -4,11 +4,11 @@ import random
 import time
 import base64
 from tls_client import Session
-
+import sys
  
 sesh = Session(client_identifier="chrome_115", random_tls_extension_order=True)
 
-PICTURE_FOLDER = 'profile_pictures/'
+PICTURE_FOLDER = sys.argv[1]
 
 def get_random_picture():
     pictures = os.listdir(PICTURE_FOLDER)
